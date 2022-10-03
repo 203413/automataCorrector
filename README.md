@@ -1,0 +1,2 @@
+# automataCorrector
+El autómata leerá palabras en el idioma español, y verificará si cumplen con ciertas reglas de la gramática como: - Evitar ciertas combinaciones incorrectas de consonantes - Reglas de uso de las consonantes y vocales tales como: 1. después de la M, como consonante se debe de usar la B o la P 2. después de la N, como consonante se debe de usar V, F o S 3. Las únicas vocales que puedes seguir de una H son U y I. Entre otras reglas
