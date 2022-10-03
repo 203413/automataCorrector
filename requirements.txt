@@ -1,0 +1,15 @@
+automata-lib==6.0.2
+certifi==2022.6.15
+charset-normalizer==2.1.1
+distlib==0.3.6
+filelock==3.8.0
+idna==3.3
+networkx==2.8.7
+platformdirs==2.5.2
+pydot==1.4.2
+PyMySQL==1.0.2
+pyparsing==3.0.9
+pytube==12.1.0
+requests==2.28.1
+urllib3==1.26.12
+virtualenv==20.16.5
