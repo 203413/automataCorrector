@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import StringVar, messagebox as MessageBox
 import tkinter
 from tkinter import *
+from tkinter import ttk
 import re 
 from automata.fa.nfa import NFA
 
@@ -48,14 +49,24 @@ nfa = NFA(
 def calculop():
     palabra=caja.get()
     partes=re.split(r'[;,.\s]\s*',palabra)
+    cont=0
+    bad=0
 
     for i in partes:
         x='Pala incorrecta: '+i
         if nfa.accepts_input(i):
-            print('wuuuu')
+            cont=cont+1
         else:
-            r = Label(ventana,text=x)
+            r = Label(ventana,bg = "red",text=x)
             r.pack()
+            bad=1
+    
+    if (bad==0):
+        r = Label(ventana,bg = "green",text="No hay palabras incorrectas. Numero de palabras: "+str(cont))
+        r.pack()
+
+    s = Label(ventana,text="-------------------")
+    s.pack()
         
 if __name__ == "__main__":
     ventana=tk.Tk()
@@ -63,6 +74,12 @@ if __name__ == "__main__":
     ventana.title('Verificador de gramática en español')
 
     T = tk.Text(ventana)
+    photo = tk.PhotoImage(file='./logo.png')
+    image_label = tk.Label(
+        ventana,
+        image=photo
+    )
+    image_label.pack()
 
     caja=tk.Entry(ventana)
     caja.pack(anchor="center")
@@ -70,7 +87,7 @@ if __name__ == "__main__":
     boton=tk.Button(ventana,text='Verificar',command=calculop)
     boton.pack(anchor="center")
 
-    w = Label(ventana,text="Reporte de palabras erroneas:")
+    w = Label(ventana,bg = "yellow",text="Reporte de palabras erroneas:")
     w.pack()
 
     ventana.mainloop()
